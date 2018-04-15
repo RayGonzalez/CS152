@@ -98,7 +98,7 @@ def get_restaurant():
         
     if not len(sols): ans = "Sorry, couldn't found any restaurant." 
         
-    Label(master, text= "You can get food from: %s" % ans).grid(row=17, column = 3)
+    ans_label.config(text = "You can get food from: " + ans )
     
     # retract all assertions after obtaining results
     prolog.retractall("cuisine(" + str(chosen_cuisines) + ")")
@@ -152,4 +152,6 @@ for key in payment_options:
     row += 1
 
 Button(master, text='GIVE ME FOOD', command=get_restaurant).grid(row= 15, pady=4, column = 3)
+ans_label = Label(master, text= "")
+ans_label.grid(row=17, column = 3)
 mainloop()
