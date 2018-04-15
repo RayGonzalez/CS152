@@ -53,6 +53,8 @@ memberOfPay([H|T], P) :- member(H,P); memberOfPay(T,P).
 smallerThan(X,Y) :- X =< Y.
 """
 
+with open("KB.pl", "w") as text_file: text_file.write(KB)
+
 cuisine_options = ['vegetarian', 'indian', 'chinese', 'seafood', 'fast_food', 
                    'burger', 'pizza', 'cafe', 'italian', 'mexican', 'continental', 'asian', 
                    'mediterranean', 'healthy_food', 'salad']
